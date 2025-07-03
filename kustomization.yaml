@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+resources:
+- setup.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+  - name: rhoai-setup
+    namespace: redhat-ods-operator
+    files:
+      - scripts/setup.sh
+  - name: rhoai-manifests
+    namespace: redhat-ods-operator
+    files:
+      - scripts/manifests/serverless_operator_group.yaml
+      - scripts/manifests/serverless_subscription.yaml
+      - scripts/manifests/service_mesh_2_subscription.yaml
