@@ -1,0 +1,1 @@
+# minimal-openshift-ai-setup
