@@ -12,9 +12,18 @@ configMapGenerator:
     namespace: redhat-ods-operator
     files:
       - scripts/setup.sh
-  - name: rhoai-manifests
+  - name: dependency-manifests
     namespace: redhat-ods-operator
     files:
-      - scripts/manifests/serverless_operator_group.yaml
-      - scripts/manifests/serverless_subscription.yaml
-      - scripts/manifests/service_mesh_2_subscription.yaml
+      - scripts/dependency-manifests/serverless_operator_group.yaml
+      - scripts/dependency-manifests/serverless_subscription.yaml
+      - scripts/dependency-manifests/service_mesh_2_subscription.yaml
+  - name: openshift-ai
+    namespace: redhat-ods-operator
+    files:
+      - scripts/openshift-ai/operator_group.yaml
+      - scripts/openshift-ai/subscription.yaml
+  - name: datasciencecluster
+    namespace: redhat-ods-operator
+    files:
+      - scripts/datasciencecluster/dsc.yaml
